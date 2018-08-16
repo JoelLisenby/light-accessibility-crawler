@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs')
-const lightcrawler = require('.')
+const lightaccessibilitycrawler = require('.')
 
 const options = yargs.demandOption(['c', 'u'])
   .alias('u', 'url').describe('url', 'URL to crawl')
@@ -9,4 +9,4 @@ const options = yargs.demandOption(['c', 'u'])
   .alias('c', 'config').describe('config', 'Options for lighthouse')
   .argv
 
-lightcrawler(options)
+lightaccessibilitycrawler(options)
