@@ -43,7 +43,7 @@ module.exports = (options) => {
 
   let html_out_obj = {}
 
-  let html_out = '<html lang="en_US"><head><title>Lighthouse Report</title>';
+  let html_out = '<html lang="en_US"><head><title>Accessibility Scan Results</title>';
   html_out += '<style>body { font-family: roboto; font-size: 14px; } a { color: #1a6dd8; } a:hover { color: #0c4896 } a:visited { color: #1a6dd8; } h1,h2 { padding: 1em 0; } h1 { font-size: 1.5em; } h2 { font-size: 1.25em; } .audit { padding-bottom: 1em; } .audit-url-result { padding: 2em 0; border-bottom: 4px solid #b7b7b7; } .audit-node-messages ul li ul { margin: 0; padding: 0; list-style: none; } .audit-node-messages ul li ul li { list-style-type: none; margin: 2px 0; padding: 0; } code { display: inline-block; font-family: "droid sans mono"; font-size: 0.8em; padding: 5px; background-color: #efefef; }</style>';
   html_out += '</head><body>';
   html_out += '<h1>Accessibility Scan Results</h1>';

@@ -1,6 +1,6 @@
 {
-  "name": "light-accessibility-crawler",
-  "version": "0.0.1",
+  "name": "lightaccessibilitycrawler",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "bin": {
     "light-accessibility-crawler": "./cli.js"
   },
-  "keywords": [],
+  "keywords": ["accessibility","ada","wcag","lighthouse","google","crawler","crawl","spider","website"],
   "author": "Joel Lisenby",
   "license": "ISC",
   "dependencies": {
