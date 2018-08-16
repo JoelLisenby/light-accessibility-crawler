@@ -1,10 +1,10 @@
-# light-accessibility-crawler
+# Light Accessibility Crawler
 Crawl a website, run through the google chrome lighthouse accessibility audits, then output as html file
 
 ```bash
-npm install --save-dev lightcrawler
+npm install --save-dev lightaccessibilitycrawler
 
-light-accessibility-crawler --url https://atom.io/ --config config.json
+lightaccessibilitycrawler --url https://atom.io/ --config config.json
 ```
 
 where `config.json` looks something like this:
@@ -13,7 +13,7 @@ where `config.json` looks something like this:
   "extends": "lighthouse:default",
   "settings": {
     "output": {
-      "destination": "/home/username/accessibility_results.html"
+      "destination": "accessibility_results.html"
     },
     "crawler": {
       "maxDepth": 2,
@@ -63,5 +63,3 @@ where `config.json` looks something like this:
 }
 
 ```
-
-Enjoy!
