@@ -6,10 +6,10 @@ Upon completion the output will be saved in a output.html file in the directory 
 ```bash
 npm install --save-dev lightcrawler
 
-lightcrawler --url https://atom.io/ --config lightcrawler-config.json
+light-accessibility-crawler --url https://atom.io/ --config light-accessibility-crawler-config.json
 ```
 
-where `lightcrawler-config.json` looks something like this:
+where `light-accessibility-crawler-config.json` looks something like this:
 ```json
 {
   "extends": "lighthouse:default",
