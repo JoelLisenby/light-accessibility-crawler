@@ -50,6 +50,7 @@ module.exports = (options) => {
   const lighthouseQueue = async.queue((url, callback) => {
     runLighthouse(url, configPath, (errorCount, lh_html_out_obj) => {
       totalErrorCount += errorCount
+      console.log(lh_html_out_obj);
 
       Object.keys(lh_html_out_obj).forEach(function(key) {
         html_out_obj[key] = lh_html_out_obj[key]
