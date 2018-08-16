@@ -15,32 +15,55 @@ where `lightcrawler-config.json` looks something like this:
   "extends": "lighthouse:default",
   "settings": {
     "output": {
-      "destination": "result.html"
+      "destination": "/home/username/accessibility_results.html"
     },
     "crawler": {
       "maxDepth": 2,
       "maxChromeInstances": 5
     },
     "onlyCategories": [
-      "Accessibility",
-      "Performance",
-      "Best Practices"
+      "Accessibility"
     ],
     "onlyAudits": [
-      "accesskeys",
-      "aria-allowed-attr",
-      "external-anchors-use-rel-noopener",
-      "geolocation-on-start",
-      "no-document-write",
-      "no-mutation-events",
-      "no-old-flexbox",
-      "time-to-interactive",
-      "user-timings",
-      "viewport",
-      "without-javascript"
+	"accesskeys",
+	"aria-allowed-attr",
+	"aria-required-attr",
+	"aria-required-children",
+	"aria-required-parent",
+	"aria-roles",
+	"aria-valid-attr-value",
+	"aria-valid-attr",
+	"audio-caption",
+	"button-name",
+	"bypass",
+	"color-contrast",
+	"definition-list",
+	"dlitem",
+	"document-title",
+	"duplicate-id",
+	"frame-title",
+	"html-has-lang",
+	"html-lang-valid",
+	"image-alt",
+	"input-image-alt",
+	"label",
+	"layout-table",
+	"link-name",
+	"list",
+	"listitem",
+	"meta-refresh",
+	"meta-viewport",
+	"object-alt",
+	"tabindex",
+	"td-headers-attr",
+	"th-has-data-cells",
+	"valid-lang",
+	"video-caption",
+	"video-description"
     ]
   }
 }
+
 ```
 
 Enjoy!
