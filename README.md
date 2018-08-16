@@ -1,7 +1,5 @@
 # light-accessibility-crawler
-Crawl a website, run it through Google Chrome Lighthouse accessibility audits, then output results in html file.
-
-Upon completion the output will be saved in a output.html file in the directory the command is run from.
+Crawl a website, run through the google chrome lighthouse accessibility audits, then output as html file
 
 ```bash
 npm install --save-dev lightcrawler
