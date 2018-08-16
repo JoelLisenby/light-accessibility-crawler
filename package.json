@@ -1,6 +1,6 @@
 {
-  "name": "lightcrawler",
-  "version": "0.1.0",
+  "name": "light-accessibility-crawler",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "lightcrawler": "./cli.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joel Lisenby",
   "license": "ISC",
   "dependencies": {
     "async": "^2.4.1",
