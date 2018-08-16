@@ -4,10 +4,10 @@ Crawl a website, run through the google chrome lighthouse accessibility audits, 
 ```bash
 npm install --save-dev lightcrawler
 
-light-accessibility-crawler --url https://atom.io/ --config light-accessibility-crawler-config.json
+light-accessibility-crawler --url https://atom.io/ --config config.json
 ```
 
-where `light-accessibility-crawler-config.json` looks something like this:
+where `config.json` looks something like this:
 ```json
 {
   "extends": "lighthouse:default",
