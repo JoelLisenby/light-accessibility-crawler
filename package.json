@@ -9,7 +9,17 @@
   "bin": {
     "light-accessibility-crawler": "./cli.js"
   },
-  "keywords": ["accessibility","ada","wcag","lighthouse","google","crawler","crawl","spider","website"],
+  "keywords": [
+    "accessibility",
+    "ada",
+    "wcag",
+    "lighthouse",
+    "google",
+    "crawler",
+    "crawl",
+    "spider",
+    "website"
+  ],
   "author": "Joel Lisenby",
   "license": "ISC",
   "dependencies": {
