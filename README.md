@@ -14,6 +14,9 @@ where `lightcrawler-config.json` looks something like this:
 {
   "extends": "lighthouse:default",
   "settings": {
+    "output": {
+      "destination": "result.html"
+    },
     "crawler": {
       "maxDepth": 2,
       "maxChromeInstances": 5
