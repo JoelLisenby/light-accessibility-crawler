@@ -1,13 +1,12 @@
+const async = require('async')
 const cheerio = require('cheerio')
-const ChildProcess = require('child_process')
+const spawn = require('child_process').spawn;
 const Crawler = require('simplecrawler')
-const path = require('path')
-const queue = require('async/queue')
-const fs = require('fs')
-const colors = require('colors')
 const Entities = require('html-entities').Html5Entities;
 const entities = new Entities();
+const fs = require('fs')
 const nl2br  = require('nl2br');
+const path = require('path')
 
 const stats = {
   pageCount: 0,
@@ -48,7 +47,7 @@ module.exports = (options) => {
   html_out += '</head><body>';
   html_out += '<h1>Accessibility Scan Results</h1>';
 
-  const lighthouseQueue = queue((url, callback) => {
+  const lighthouseQueue = async.queue((url, callback) => {
     runLighthouse(url, configPath, (errorCount, lh_html_out_obj) => {
       totalErrorCount += errorCount
 
@@ -72,7 +71,6 @@ module.exports = (options) => {
       Object.keys(html_out_obj).sort().forEach(function(key) {
         html_out_obj_sorted[key] = html_out_obj[key];
       })
-
       
       html_out += '<div class="table-of-contents"><h2 id="table-of-contents">Table of Contents</h2><ul>';
       Object.keys(html_out_obj_sorted).forEach(function(key) {
@@ -111,7 +109,7 @@ function runLighthouse (url, configPath, callback) {
   ]
 
   const lighthousePath = require.resolve('lighthouse/lighthouse-cli/index.js')
-  const lighthouse = ChildProcess.spawn(lighthousePath, args)
+  const lighthouse = spawn(lighthousePath, args)
   let output = ''
   lighthouse.stdout.on('data', (data) => {
     output += data
@@ -147,12 +145,9 @@ function runLighthouse (url, configPath, callback) {
           lh_html_out_obj[url] += '<div class="audit">';
 
           if (!displayedCategory) {
-            //console.log();
-            //console.log(category.name.bold.underline);
             displayedCategory = true
           }
           errorCount++
-          //console.log(url.replace(/\/$/, ''), '\u2717'.red, audit.id.bold, '-', audit.result.description.italic)
           lh_html_out_obj[url] += '<div class="audit-description"><p><strong>'+ audit.id +'</strong> - '+ entities.encode( audit.result.description ) +'</p></div>';
 
           if (stats.violationCounts[category.name] === undefined) {
@@ -168,7 +163,6 @@ function runLighthouse (url, configPath, callback) {
               value.forEach((result) => {
                 if (result.url) {
                   lh_html_out_obj[url] += '<li>'+ result.url +'</li>';
-                  //console.log(`   ${result.url}`)
                 }
               })
               lh_html_out_obj[url] += '</ul></div>';
@@ -186,11 +180,9 @@ function runLighthouse (url, configPath, callback) {
               })
               lh_html_out_obj[url] += '<div class="audit-node-messages"><ul>';
               Object.keys(messagesToNodes).forEach((message) => {
-                //console.log(`   ${message}`)
                 lh_html_out_obj[url] += '<li><strong>'+ nl2br(message) +'.</strong>';
                 lh_html_out_obj[url] += '<ul>';
                 messagesToNodes[message].forEach(node => {
-                  //console.log(`     ${node}`.gray)
                   lh_html_out_obj[url] += '<li><code>'+ entities.encode(node) +'</code></li>';
                 })
                 lh_html_out_obj[url] += '</ul>'
