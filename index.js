@@ -52,9 +52,11 @@ module.exports = (options) => {
       totalErrorCount += errorCount
       console.log(lh_html_out_obj);
 
-      Object.keys(lh_html_out_obj).forEach(function(key) {
-        html_out_obj[key] = lh_html_out_obj[key]
-      })
+      if(typeof lh_html_out_obj === 'object') {
+        Object.keys(lh_html_out_obj).forEach(function(key) {
+          html_out_obj[key] = lh_html_out_obj[key]
+        })
+      }
 
       callback()
     })
