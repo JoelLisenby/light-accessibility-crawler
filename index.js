@@ -1,4 +1,4 @@
-import queue from 'async/queue';
+const queue = require('async/queue');
 const cheerio = require('cheerio')
 const Crawler = require('simplecrawler')
 const Entities = require('html-entities').Html5Entities;
