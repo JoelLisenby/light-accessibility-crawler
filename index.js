@@ -119,7 +119,7 @@ function runLighthouse (url, configPath, callback) {
   })
 
   stats.auditTimesByPageUrl[url] = {startTime: new Date()}
-  lighthouse.once('close', () => {
+  lighthouse.once('close', function() {
     stats.auditTimesByPageUrl[url].endTime = new Date()
     let errorCount = 0
     let lh_html_out_obj = {}
