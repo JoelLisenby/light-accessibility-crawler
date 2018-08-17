@@ -1,5 +1,6 @@
-const queue = require('async/queue');
+const queue = require('async/queue')
 const cheerio = require('cheerio')
+const spawn = require('child_process').spawn;
 const Crawler = require('simplecrawler')
 const Entities = require('html-entities').Html5Entities;
 const entities = new Entities();
@@ -49,6 +50,7 @@ module.exports = (options) => {
   const lighthouseQueue = queue((url, callback) => {
     runLighthouse(url, configPath, (errorCount, lh_html_out_obj) => {
       totalErrorCount += errorCount
+      console.log(lh_html_out_obj);
 
       Object.keys(lh_html_out_obj).forEach(function(key) {
         html_out_obj[key] = lh_html_out_obj[key]
