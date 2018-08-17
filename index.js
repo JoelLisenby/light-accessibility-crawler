@@ -1,6 +1,6 @@
 const queue = require('async/queue')
 const cheerio = require('cheerio')
-const ChildProcess = require('child_process')
+const child_process = require('child_process')
 const Crawler = require('simplecrawler')
 const Entities = require('html-entities').Html5Entities;
 const entities = new Entities();
@@ -112,7 +112,7 @@ function runLighthouse (url, configPath, callback) {
   ]
 
   const lighthousePath = require.resolve('lighthouse/lighthouse-cli/index.js')
-  const lighthouse = ChildProcess.spawn(lighthousePath, args)
+  const lighthouse = child_process.spawn(lighthousePath, args)
   let output = ''
   lighthouse.stdout.on('data', (data) => {
     output += data
