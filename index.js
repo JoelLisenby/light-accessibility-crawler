@@ -110,7 +110,7 @@ function runLighthouse (url, configPath, callback) {
   ]
 
   const lighthousePath = require.resolve('lighthouse/lighthouse-cli/index.js')
-  const lighthouse = spawn(lighthousePath, args)
+  const lighthouse = child_process.spawn(lighthousePath, args)
   let output = ''
   lighthouse.stdout.on('data', (data) => {
     output += data
