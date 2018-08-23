@@ -1,37 +1,49 @@
 {
-  "name": "lightaccessibilitycrawler",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "node cli.js --url https://www.joellisenby.com/ --config config.json"
+  "_from": "lightcrawler@^0.0.9",
+  "_id": "lightcrawler@0.0.9",
+  "_inBundle": false,
+  "_integrity": "sha512-MiWVmyU0l57Oz9WdRbXy9KTzEKiv7RhoYzrPDC1h7+CWn8q80e3hSfkmV/hD00TkKbn+aQe5Ftd1unAbql7gLg==",
+  "_location": "/lightcrawler",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "lightcrawler@^0.0.9",
+    "name": "lightcrawler",
+    "escapedName": "lightcrawler",
+    "rawSpec": "^0.0.9",
+    "saveSpec": null,
+    "fetchSpec": "^0.0.9"
   },
-  "bin": {
-    "light-accessibility-crawler": "./cli.js"
-  },
-  "keywords": [
-    "accessibility",
-    "ada",
-    "wcag",
-    "lighthouse",
-    "google",
-    "crawler",
-    "crawl",
-    "spider",
-    "website"
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
   ],
-  "author": "Joel Lisenby",
-  "license": "ISC",
-  "dependencies": {
-    "async": "^2.6.1",
-    "async.queue": "^0.5.2",
-    "cheerio": "^1.0.0-rc.2",
-    "child_process": "^1.0.2",
-    "html-entities": "^1.2.1",
-    "lighthouse": "^3.0.3",
-    "nl2br": "^0.0.3",
-    "simplecrawler": "^1.1.6",
-    "yargs": "^12.0.1"
+  "_resolved": "https://registry.npmjs.org/lightcrawler/-/lightcrawler-0.0.9.tgz",
+  "_shasum": "c1ea6730fe7e567a2e82bcfb49dafd20a60fdabc",
+  "_spec": "lightcrawler@^0.0.9",
+  "_where": "/home/joel/lightcrawler-test",
+  "author": "",
+  "bin": {
+    "lightcrawler": "./cli.js"
   },
-  "devDependencies": {}
+  "bundleDependencies": false,
+  "dependencies": {
+    "async": "^2.4.1",
+    "cheerio": "^1.0.0-rc.1",
+    "colors": "^1.1.2",
+    "lighthouse": "^2.1.0",
+    "simplecrawler": "^1.1.3",
+    "yargs": "^8.0.2"
+  },
+  "deprecated": false,
+  "description": "Crawl a website and run it through Google lighthouse",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "lightcrawler",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.9"
 }

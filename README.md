@@ -1,65 +1,46 @@
-# Light Accessibility Crawler
-Crawl a website, run through the google chrome lighthouse accessibility audits, then output as html file
+# lightcrawler
+Crawl a website and run it through Google lighthouse and output results in html file.
+
+Upon completion the output will be saved in results.html file in the directory the command is run from.
 
 ```bash
-npm install --save-dev lightaccessibilitycrawler
+npm install --save-dev lightcrawler
 
-lightaccessibilitycrawler --url https://atom.io/ --config config.json
+lightcrawler --url https://atom.io/ --config lightcrawler-config.json
 ```
 
-where `config.json` looks something like this:
+where `lightcrawler-config.json` looks something like this:
 ```json
 {
   "extends": "lighthouse:default",
   "settings": {
     "output": {
-      "destination": "accessibility_results.html"
+      "destination": "result.html"
     },
     "crawler": {
       "maxDepth": 2,
       "maxChromeInstances": 5
     },
     "onlyCategories": [
-      "Accessibility"
+      "Accessibility",
+      "Performance",
+      "Best Practices"
     ],
     "onlyAudits": [
-	"accesskeys",
-	"aria-allowed-attr",
-	"aria-required-attr",
-	"aria-required-children",
-	"aria-required-parent",
-	"aria-roles",
-	"aria-valid-attr-value",
-	"aria-valid-attr",
-	"audio-caption",
-	"button-name",
-	"bypass",
-	"color-contrast",
-	"definition-list",
-	"dlitem",
-	"document-title",
-	"duplicate-id",
-	"frame-title",
-	"html-has-lang",
-	"html-lang-valid",
-	"image-alt",
-	"input-image-alt",
-	"label",
-	"layout-table",
-	"link-name",
-	"list",
-	"listitem",
-	"meta-refresh",
-	"meta-viewport",
-	"object-alt",
-	"tabindex",
-	"td-headers-attr",
-	"th-has-data-cells",
-	"valid-lang",
-	"video-caption",
-	"video-description"
+      "accesskeys",
+      "aria-allowed-attr",
+      "external-anchors-use-rel-noopener",
+      "geolocation-on-start",
+      "no-document-write",
+      "no-mutation-events",
+      "no-old-flexbox",
+      "time-to-interactive",
+      "user-timings",
+      "viewport",
+      "without-javascript"
     ]
   }
 }
-
 ```
+
+Enjoy!
